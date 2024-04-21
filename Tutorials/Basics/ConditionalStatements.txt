@@ -1,0 +1,100 @@
+If else statements :
+--------------------
+evaluate complex conditions. conditions aren't based on simple equality checks. preferred to use when we need
+to execute different blocks of code based on various conditions. 
+
+switch statements :
+-------------------
+when you have a single variable to compare against multiple distinct values. make code easier and well structured. 
+
+let's consider a common problem: given a number between 1 and 7, print the corresponding day of the week. 
+Here's how we can use the switch statement for this task:
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int day = 4;
+
+    switch (day) {
+        case 1:
+            cout << "Monday";
+            break;
+        case 2:
+            cout << "Tuesday";
+            break;
+        case 3:
+            cout << "Wednesday";
+            break;
+        case 4:
+            cout << "Thursday";
+            break;
+        case 5:
+            cout << "Friday";
+            break;
+        case 6:
+            cout << "Saturday";
+            break;
+        case 7:
+            cout << "Sunday";
+            break;
+        default:
+            cout << "Invalid";
+    }
+
+    return 0;
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Switch statements are exclusively designed to handle integer or character values. 
+Ensure that the expression provides values of type int or char.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    char grade = 'B';
+
+    switch (grade) {
+        case 'A':
+            cout << "Excellent!" << endl;
+            break;
+        case 'B':
+            cout << "Good!" << endl;
+            break;
+        default:
+            cout << "Not specified." << endl;
+    }
+
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Nested switch : avoid to use due to its potential to introduce complexity and higher code readability. 
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 2;
+    int y = 3;
+
+    switch (x) {
+        case 1:
+            cout << "x is 1." << endl;
+            switch (y) {
+                case 1:
+                    cout << "y is 1." << endl;
+                    break;
+                default:
+                    cout << "y is not 1." << endl;
+            }
+            break;
+        default:
+            cout << "x is not 1." << endl;
+    }
+
+    return 0;
+}
